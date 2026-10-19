@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Agenda escolar</title>
+    </head>
+
+    <body>
+
+        <section id="formCadastro">
+            <h2>Cadastrar atividade</h2>
+            <form>
+                <div class="grupoInput">
+                    <div>
+                        <label for="titulo">Título: </label>
+                        <input type="text" id="titulo" class="in" name="titulo">
+                    </div>
+
+                    <div>
+                        <label for="disciplina">Disciplina: </label>
+                        <select name="disciplina" id="disciplina" class="in">
+                            <option value="progWeb">Programação WEB</option>
+                            <option value="algo">Algoritmos</option>
+                            <option value="manuSis">Manutenção de sistemas</option>
+                            <option value="bio">Biologia</option>
+                            <option value="mat">Matemática</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grupoInput">
+                    <div>
+                        <label for="prazo">Prazo: </label>
+                        <input type="date" class="in">
+                    </div>
+
+                    <div>
+                        <label for="prioridade">Prioridade: </label>
+                        <select name="prioridade" id="prioridade" class="in">
+                            <option value="baixa">Baixa</option>
+                            <option value="media">Média</option>
+                            <option value="alta">Alta</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grupoInput">
+                    <label for="descricao">Descrição: </label>
+                    <textarea name="descricao" class="in" id="descricao"></textarea>
+                </div>
+
+                <input type="submit" value="Cadastrar atividade">
+            </form>
+        </section>
+
+
+        <main>
+        <div>
+            <section class="painel" id="estatisticas">
+                <h2>Painel de atividades</h2>
+                <section>
+                    <div>Total: <span id="total">0</span></div>
+                    <div>Pendentes: <span id="pendentes">0</span></div>
+                    <div>Concluídas: <span id="concluidas">0</span></div>
+                </section>
+            </section>
+        </div>
+
+            <div>
+                <section class="painel" id="atividades">
+                    <header id="headerPrincipal">
+                        <div>
+                            <h2>Atividades</h2>
+                        </div>
+
+                        <div>
+                            <button id="novaAtividade">Cadastar nova Atividade</button>
+                        </div>
+                    </header>
+
+                    <div class="atividade painel">
+                        <header>
+
+                            <div>
+                                <h3 class="titulo"><em>Biologia</em> - Taxonomia</h3>
+                                <sub>Adicionado em 24/08/2010</sub>
+                            </div>
+
+<pre>
+  /
+ /
+/
+</pre>
+
+                            <div class="infoSecundaria">
+                                <div class="prazo">Data de entrega: <em>32/13/2027</em></div>
+                                <div class="prioridade">Prioridade: Máxima<span>███</span></div>
+                            </div>
+
+
+                        </header>
+
+                        <div class="info">
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta velit esse pariatur voluptas voluptate? Consectetur nihil libero accusantium ab doloremque exercitationem aspernatur iste, ipsam minima saepe labore facere maxime. Debitis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quam veritatis delectus eaque corporis quidem error odio, porro nam accusantium iste cupiditate at voluptates minus fuga, culpa ullam perferendis libero!
+                            </p>
+                        </div>
+
+                        <div class="funcionalidade">
+                            <button class="concluidaB">Concluída</button>
+                            <button class="modificarB">Modificar</button>
+                            <button class="deletarB">Deletar</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+    </body>
+
+    <script>
+        let total = 15
+        let pendentes = 10
+        let concluidas = 5
+
+        const totalSpan = document.getElementById("total")
+        const pendentesSpan = document.getElementById("pendentes")
+        const concluidasSpan = document.getElementById("concluidas")
+
+        const adicionarAtividade = document.getElementById("novaAtividade")
+
+        totalSpan.innerText = total
+        pendentesSpan.innerText = pendentes
+        concluidasSpan.innerText = concluidas
+
+        adicionarAtividade.setAttribute("onclick", ``)
+
+        for (i = 0; i < total; i++) {
+            totalSpan.innerText += "█"
+            if (i < pendentes) {
+                pendentesSpan.innerText += "█"
+            }
+            if (i < concluidas) {
+                concluidasSpan.innerText += "█"
+            }
+        }
+
+        function ExibirPopup() {
+
+        }
+
+    </script>
+</html>

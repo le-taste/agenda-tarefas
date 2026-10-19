@@ -1,0 +1,203 @@
+:root {
+    --gap: 15px;
+    --block-color: rgba(30, 30, 30, 50%);
+    --hovered-block-color: rgba(60, 60, 60, 40%);
+    --border: rgb(110, 110, 110);
+    --concluida: rgb(46, 190, 166);
+    --vermelho: rgb(173, 48, 48);
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    display: flex; justify-content: center;
+    font-family: monospace, monospace;
+    color: white;
+}
+
+main {
+    width: 100%;
+
+    margin: var(--gap);
+    margin-bottom: 0;
+
+    display: grid;
+    grid-template-columns: 20% auto;
+    gap: var(--gap);
+}
+
+.painel {
+    padding: 16px 30px 16px 30px;
+
+    margin-bottom: var(--gap);
+    background-color: var(--block-color);
+    border: 1px solid var(--border)
+}
+
+#formCadastro {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 500px;
+    padding:40px;
+    padding-top: 20px;
+
+    background-color: black;
+    border: 1px solid var(--border);
+}
+
+#formCadastro h2 {
+    text-align: center;
+    font-style: italic;
+    margin-top: 0;
+}
+
+.grupoInput {
+    display:flex;
+    justify-content: space-between;
+}
+
+.grupoInput div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: var(--gap);
+}
+
+#formCadastro label {
+    font-size: smaller;
+    font-style: italic;
+}
+
+.in {
+    border: 1px solid var(--border);
+    padding: 5px;
+    background-color: rgba(0,0,0,0);
+    color: white;
+    outline: none;
+
+    font-family: monospace, monospace;
+
+    width: 100%;
+}
+
+.in option {
+    background-color: black;
+    color: white;
+
+    outline: none;
+}
+
+.in option:hover {
+    background-color: var(--hovered-block-color);
+    color: white;
+
+    outline: none;
+}
+
+#estatisticas {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#estatisticas section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    gap: var(--gap)
+}
+
+
+#estatisticas span {
+    letter-spacing: 1px;
+    line-height: 20px;
+    overflow-wrap: anywhere;
+}
+
+#pendentes {
+    color: var(--vermelho)
+}
+
+#concluidas {
+    color: var(--concluida);
+}
+
+#headerPrincipal {
+    display: flex;
+    justify-content: space-between;
+}
+
+#headerPrincipal h2 {
+    margin-top: 10px;
+}
+
+button {
+    background-color: var(--block-color);
+    border: 1px solid var(--border);
+
+    color: white;
+    font-family: monospace, monospace;
+
+    padding: 14px 15px 15px 15px;
+}
+
+button:hover {
+    background-color: var(--hovered-block-color);
+}
+
+h2 {
+    margin: 0;
+    margin-bottom: var(--gap);
+    font-weight: 200;
+}
+
+.atividade header h3 {
+    margin-bottom: 0;
+}
+
+.atividade header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: var(--gap);
+}
+
+.infoSecundaria {
+    margin-top: 1em;
+}
+
+.funcionalidade {
+    display: grid;
+    grid-template-columns: 40% 40% auto;
+    gap: var(--gap);
+}
+
+.funcionalidade button {
+    background-color: rgba(0,0,0,0);
+}
+
+.funcionalidade button:hover {
+    background-color: var(--block-color);
+}
+
+.concluidaB {
+    border: 1px solid var(--concluida);
+    color: var(--concluida)
+}
+
+.deletarB {
+    border: 1px solid var(--vermelho);
+    color: var(--vermelho)
+}
+
+.info p {
+    font-size: 14px;
+    font-style: italic;
+}
