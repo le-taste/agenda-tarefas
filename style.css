@@ -1,35 +1,58 @@
 :root {
     --gap: 15px;
-    --block-color: rgba(30, 30, 30, 50%);
-    --hovered-block-color: rgba(60, 60, 60, 40%);
+    --block-color: rgba(30, 30, 30, 0);
+    --hovered-block-color: rgba(60, 60, 60, 50%);
     --border: rgb(110, 110, 110);
     --concluida: rgb(46, 190, 166);
     --vermelho: rgb(173, 48, 48);
 }
 
+* {
+    box-sizing: border-box
+}
+
 body {
     background-color: black;
     margin: 0;
-    display: flex; justify-content: center;
     font-family: monospace, monospace;
     color: white;
 }
 
-main {
-    width: 100%;
+#menuBar {
+    margin: var(--gap);
+    padding: 0;
+    display: flex;
+}
 
+#menuBar button {
+    margin: 0;
+    border: none;
+    border-right: 1px solid var(--border);
+    padding:0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+
+    image-rendering: pixelated;
+    transition: 0.2s;
+}
+
+#menuBar button:hover {
+    background-color: var(--border);
+}
+
+main {
     margin: var(--gap);
     margin-bottom: 0;
-
-    display: grid;
-    grid-template-columns: 20% auto;
+    display: flex;
+    align-items: flex-start;
     gap: var(--gap);
 }
 
 .painel {
-    padding: 16px 30px 16px 30px;
-
-    margin-bottom: var(--gap);
     background-color: var(--block-color);
     border: 1px solid var(--border)
 }
@@ -99,26 +122,56 @@ main {
 }
 
 #estatisticas {
+    width: 20%;
+
     display: flex;
     flex-direction: column; 
     align-items: center;
     justify-content: flex-start;
 }
 
-#estatisticas section {
+#estatisticas h2 {
     width: 100%;
+    padding: var(--gap);
+    border-bottom: 1px solid var(--border);
+
+    font-style: italic;
+    font-size: 28px;
+}
+
+#estatisticaBloco {
+    width: 100%;
+    padding: var(--gap);
     display: flex;
     flex-direction: column;
 
     align-items: flex-start;
-    gap: var(--gap)
+    gap: var(--gap);
+
+    border-bottom: 1px solid var(--border);
 }
 
-
-#estatisticas span {
+#estatisticaBloco span {
     letter-spacing: 1px;
     line-height: 20px;
     overflow-wrap: anywhere;
+}
+
+#estatisticaPorcentagem {
+    width: 100%;
+
+    padding: var(--gap);
+    display: flex;
+    justify-content: space-around;
+}
+
+#estatisticaPorcentagem div {
+    padding: 5px;
+}
+
+
+.N {
+    font-style: italic;
 }
 
 #pendentes {
@@ -129,13 +182,26 @@ main {
     color: var(--concluida);
 }
 
+#atividades {
+    padding: 0;
+}
+
 #headerPrincipal {
     display: flex;
     justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+    padding: var(--gap);
+
 }
 
 #headerPrincipal h2 {
-    margin-top: 10px;
+    font-size: 30px;
+    margin: 0;
+    margin-top: 5px;
+    margin-left: 10px;
+
+    font-style: italic;
 }
 
 button {
@@ -146,6 +212,8 @@ button {
     font-family: monospace, monospace;
 
     padding: 14px 15px 15px 15px;
+
+    transition: 0.2s;
 }
 
 button:hover {
@@ -156,6 +224,15 @@ h2 {
     margin: 0;
     margin-bottom: var(--gap);
     font-weight: 200;
+}
+
+#atividades {
+    width: 100%;
+}
+
+.atividade {
+    margin: var(--gap);
+    padding: var(--gap);
 }
 
 .atividade header h3 {
@@ -179,13 +256,6 @@ h2 {
     gap: var(--gap);
 }
 
-.funcionalidade button {
-    background-color: rgba(0,0,0,0);
-}
-
-.funcionalidade button:hover {
-    background-color: var(--block-color);
-}
 
 .concluidaB {
     border: 1px solid var(--concluida);
