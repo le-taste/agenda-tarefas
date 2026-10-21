@@ -67,13 +67,13 @@
         <section class="painel" id="estatisticas">
             <h2>Painel de atividades</h2>
             <section id="estatisticaBloco">
-                <div>Total: <span id="total">0</span></div>
-                <div>Pendentes: <span id="pendentes">0</span></div>
-                <div>Concluídas: <span id="concluidas">0</span></div>
+                <div>Total: <span class="total bloco" id="totalBloco">0</span></div>
+                <div>Pendentes: <span class="pendentes bloco" id="pendenteBloco">0</span></div>
+                <div>Concluídas: <span class="concluidas bloco" id="concluidaBloco">0</span></div>
             </section>
             <section id="estatisticaPorcentagem">
-                <div>75% <span>Concluídas</span></div>
-                <div>25% <span>Pendentes</span></div>
+                <div><span class="concluidas" id="concluidasPorcentagem">75%</span> <span>Concluídas</span></div>
+                <div><span class="pendentes" id="pendentesPorcentagem">25%</span> <span>Pendentes</span></div>
             </section>
         </section>
 
@@ -103,7 +103,7 @@
 
                     <div class="infoSecundaria">
                         <div class="prazo">Data de entrega: <em>32/13/2027</em></div>
-                        <div class="prioridade">Prioridade: Máxima<span>███</span></div>
+                        <div class="prioridade">Prioridade: Máxima <span class="bloco">███</span></div>
                     </div>
 
 
@@ -130,15 +130,27 @@
         let pendentes = 10
         let concluidas = 5
 
-        const totalSpan = document.getElementById("total")
-        const pendentesSpan = document.getElementById("pendentes")
-        const concluidasSpan = document.getElementById("concluidas")
+        const totalSpan = document.getElementById("totalBloco")
+        const pendentesSpan = document.getElementById("pendenteBloco")
+        const concluidasSpan = document.getElementById("concluidaBloco")
+
+        const concluidasPorcSpan = document.getElementById("concluidasPorcentagem")
+        const pendentesPorcSpan = document.getElementById("pendentesPorcentagem")
 
         const adicionarAtividade = document.getElementById("novaAtividade")
 
         totalSpan.innerText = ""
         pendentesSpan.innerText = ""
         concluidasSpan.innerText = ""
+
+        let porcConcluida = 0
+
+        if (total > 0) porcConcluida = Math.round(100 * (Number(concluidas)/ Number(total)))
+
+        concluidasPorcSpan.innerText = porcConcluida + '%'
+        pendentesPorcSpan.innerText = (100 - porcConcluida) + '%'
+
+
 
         adicionarAtividade.setAttribute("onclick", ``)
 

@@ -3,8 +3,8 @@
     --block-color: rgba(30, 30, 30, 0);
     --hovered-block-color: rgba(60, 60, 60, 50%);
     --border: rgb(110, 110, 110);
-    --concluida: rgb(46, 190, 166);
-    --vermelho: rgb(173, 48, 48);
+    --concluida: rgb(143, 158, 255);
+    --vermelho: rgb(255, 98, 98);
 }
 
 * {
@@ -151,7 +151,7 @@ main {
     border-bottom: 1px solid var(--border);
 }
 
-#estatisticaBloco span {
+.bloco {
     letter-spacing: 1px;
     line-height: 20px;
     overflow-wrap: anywhere;
@@ -174,15 +174,15 @@ main {
     font-style: italic;
 }
 
-#pendentes {
+.pendentes {
     color: var(--vermelho)
 }
 
-#concluidas {
+.concluidas {
     color: var(--concluida);
 }
 
-#atividades {
+.atividades {
     padding: 0;
 }
 
